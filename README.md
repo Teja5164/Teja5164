@@ -96,6 +96,13 @@ Created multiple mini applications focusing on automation, data handling, and ut
 ---
 
 ## 💼 Work Experience
+
+### Junior Software Engineer-AI/ML - Innovsolvetech Private Limited
+- Configured and optimized Athena Bot for AI-driven conversational workflows and backend task automation.
+- Worked on monitoring and observability using logs, metrics, and alerting to support reliable production
+systems.
+- Automated UI-driven workflows and task execution using computer-use tools in production environments.
+
 ### 🟦 **Machine Learning Intern – Bharat Intern**  
 - Built a **movie recommender system**, Iris classifier, and ML pipelines  
 - Preprocessing, feature scaling, model evaluation  
