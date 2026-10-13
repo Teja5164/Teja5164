@@ -16,21 +16,30 @@
 
 ---
 
-### Now: Nxmpliscore Private Limited
+### Now: AI/ML Engineer at Nxmpliscore
 
-**AI/ML Engineer** · consumer health-tech (infant care)
+I build the AI behind **ANVAYA**, the company's infant-care product line, across the whole stack: the models, the device firmware, the cloud services and the mobile apps.
 
-- **Edge AI:** took an audio-event detection model from cloud to microcontroller. It now runs as a quantised TensorFlow Lite Micro model inside ESP32-S3 firmware (ESP-IDF, C), so devices upload only the clips that matter.
-- **Production ML service:** worked on a multi-stage audio classifier (detection gate → out-of-distribution check → multi-class ensemble), served with FastAPI in Docker on Google Cloud Run. Traced accuracy gaps between offline evaluation and live traffic back to preprocessing differences between training and serving.
-- **Real-time device streaming:** built live audio/video from embedded hardware through a relay server to a Flutter app over WebRTC. The work covered firmware tuning (task/core pinning, PSRAM buffers, network stack), audio-codec bring-up and adaptive bitrate.
-- **Flutter:** builds production mobile features across the company's apps.
-- **LLM platform:** designs a retrieval-augmented assistant with per-user data isolation and an automated safety-evaluation suite.
+<sub>These projects are closed source. The descriptions cover what I built, not internal details.</sub>
 
-<sub>The company's work is in private repositories. The public projects below are my own.</sub>
+**ANVAYA SMART: AI baby monitor** · `ESP32-S3` `ESP-IDF` `WebRTC` `Flutter`<br>
+A camera-and-microphone baby monitor that streams live video and audio to the parent's phone. I wrote the firmware, the streaming path and the app side. I profiled the device and network path and turned a stuttering stream into smooth, stable, low-latency playback.
+
+**Cry Analysis Engine** · `Deep learning` `FastAPI` `Docker` `Google Cloud Run`<br>
+Listens to a baby's cry and tells the parent the likely reason. It's a multi-class audio model, served on Google Cloud, that sets aside sounds it doesn't recognise instead of guessing. I traced gaps between test accuracy and real-world accuracy back to differences between how audio was prepared for training and for serving.
+
+**On-device cry detection** · `TensorFlow Lite Micro` `ESP32-S3` `C`<br>
+The first stage of the Cry Analysis Engine, quantised to run inside the monitor's firmware. The device recognises a cry by itself and uploads only those clips, which saves bandwidth and keeps everyday household sound off the cloud.
+
+**ANVI: Pediatric Intelligence Platform** · `LLMs` `RAG` `PostgreSQL / pgvector` `FastAPI`<br>
+An AI assistant for parents that answers from vetted pediatric knowledge and the family's own records. Each family's data is kept separate, and an automated safety test suite, itself checked with mutation testing, guards every answer. I designed it and am leading the build.
+
+**ANVAYA app** · `Flutter` `Dart` `Firebase`<br>
+The free Flutter app for tracking a baby's daily care. It works offline first and runs on a shared design system I built.
 
 ---
 
-### Selected projects
+### Public projects
 
 **[Player Re-Identification](https://github.com/Teja5164/PlayerReIdentification_using_YOLOv11)** · `YOLOv11` `PyTorch` `ResNet50` `OpenCV`<br>
 Detects players in match footage and keeps each player's ID when they leave the frame and come back. YOLOv11 handles detection, ResNet50 produces appearance embeddings, and cosine similarity re-matches players. The original audio is remuxed back in with ffmpeg. Built for an AI internship assignment at Liat.ai.
@@ -57,10 +66,10 @@ A four-way signal controller driven by lane occupancy from IR sensors. It runs o
 ### Stack
 
 <p>
-  <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,sklearn,opencv,fastapi,docker,aws,gcp,githubactions,flutter,dart,c,arduino,mongodb,linux&perline=8" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, FastAPI, Docker, AWS, GCP, GitHub Actions, Flutter, Dart, C, Arduino, MongoDB, Linux">
+  <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,sklearn,opencv,fastapi,docker,aws,gcp,githubactions,flutter,dart,firebase,c,arduino,postgres,mongodb,linux&perline=9" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, FastAPI, Docker, AWS, GCP, GitHub Actions, Flutter, Dart, Firebase, C, Arduino, PostgreSQL, MongoDB, Linux">
 </p>
 
-**ML:** CNNs, detection & tracking (YOLO), re-identification embeddings, audio classification, TFLite Micro quantisation<br>
+**ML:** CNNs, detection & tracking (YOLO), re-identification embeddings, audio classification, TFLite Micro quantisation, RAG and LLM evaluation<br>
 **MLOps:** MLflow, Docker, GitHub Actions, FastAPI serving, Cloud Run, ECR<br>
 **Embedded:** ESP32-S3 (ESP-IDF), Arduino, sensor and audio-codec bring-up
 
